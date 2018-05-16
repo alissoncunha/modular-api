@@ -11,10 +11,15 @@ const users = [{
     age: '28'
 }];
 
-function listUsers(req, res) {
+function getUsers(req, res) {
     return res.send(users);
 }
 
-router.get('/users', listUsers);
+function getUser(req, res) {
+    return res.send({ name: `getuser` });
+}
+
+router.get('/users', getUsers);
+router.get('/users/:id', getUser);
 
 module.exports = router;
